@@ -10,17 +10,19 @@ use mine;
 ###########################################################
 
 CREATE TABLE m_user_admin(
-    user_id INT PRIMARY KEY AUTO_INCREMENT,
-    user_name VARCHAR(16) NOT NULL,
-    user_password VARCHAR(16) NOT NULL,
-    user_email VARCHAR(32),
-    reg_time DATETIME,
-    expire int NOT NULL DEFAULT 0,
-    user_db int DEFAULT 1
+    user_id INT PRIMARY KEY AUTO_INCREMENT COMMENT '用户ID',
+    user_name VARCHAR(16) NOT NULL COMMENT '用户名称',
+    user_password VARCHAR(16) NOT NULL COMMENT '密码',
+    user_email VARCHAR(32) COMMENT '邮箱',
+    reg_time DATETIME COMMENT '注册时间',
+    expire int NOT NULL DEFAULT 0 COMMENT '账号状态', 
+    user_db int DEFAULT 1 COMMENT '用户权限'
 );
 
 INSERT INTO m_user_admin VALUES
-(null,'root','root','','2019-09-29',0,1);
+(null,'root','root','','2019-09-29',0,9999),
+(null,'dingding','123456','','2019-11-11',0,10),
+(null,'dangdang','123456','','2019-11-11',0,10);
 
 
 
